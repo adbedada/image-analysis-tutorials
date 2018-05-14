@@ -3,6 +3,8 @@
 <head><meta charset="utf-8" />
 <title>part_four</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<link rel="stylesheet" href="../css/main.css"></link>
+<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
 
 <style type="text/css">
     /*!
@@ -8451,15 +8453,15 @@ label {
 }
 /* Flexible box model classes */
 /* Taken from Alex Russell http://infrequently.org/2009/08/css-3-progress/ */
-/* This file is a compatability layer.  It allows the usage of flexible box 
+/* This file is a compatability layer.  It allows the usage of flexible box
 model layouts accross multiple browsers, including older browsers.  The newest,
 universal implementation of the flexible box model is used when available (see
-`Modern browsers` comments below).  Browsers that are known to implement this 
+`Modern browsers` comments below).  Browsers that are known to implement this
 new spec completely include:
 
     Firefox 28.0+
     Chrome 29.0+
-    Internet Explorer 11+ 
+    Internet Explorer 11+
     Opera 17.0+
 
 Browsers not listed, including Safari, are supported via the styling under the
@@ -11233,7 +11235,7 @@ div#pager .ui-resizable-handle {
   background: #f7f7f7;
   border-top: 1px solid #cfcfcf;
   border-bottom: 1px solid #cfcfcf;
-  /* This injects handle bars (a short, wide = symbol) for 
+  /* This injects handle bars (a short, wide = symbol) for
         the resize handle. */
 }
 div#pager .ui-resizable-handle::after {
@@ -11676,7 +11678,7 @@ ul.typeahead-list > li > a {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
-    
+
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -11730,14 +11732,14 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
   }
-  div.output { 
+  div.output_wrapper {
     display: block;
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
   }
 }
 </style>
@@ -20973,19 +20975,19 @@ MO4KCgoKCgoKCgoKCgreBhTGXUFBQUFBQUFBQUFBwduA/x8RW/D14b9vNgAAAABJRU5ErkJggg==
     <span class="n">data_source</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">OpenEx</span><span class="p">(</span><span class="n">vector_data_path</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">OF_VECTOR</span><span class="p">)</span>
     <span class="n">layer</span> <span class="o">=</span> <span class="n">data_source</span><span class="o">.</span><span class="n">GetLayer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">driver</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s1">&#39;MEM&#39;</span><span class="p">)</span>  <span class="c1"># In memory dataset</span>
-    
+
     <span class="c1"># Create a container and set original image information</span>
     <span class="n">target_ds</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_UInt16</span><span class="p">)</span>
     <span class="n">target_ds</span><span class="o">.</span><span class="n">SetGeoTransform</span><span class="p">(</span><span class="n">geo_transform</span><span class="p">)</span>
     <span class="n">target_ds</span><span class="o">.</span><span class="n">SetProjection</span><span class="p">(</span><span class="n">projection</span><span class="p">)</span>
-    
+
     <span class="c1"># Rasterize Layer</span>
     <span class="n">gdal</span><span class="o">.</span><span class="n">RasterizeLayer</span><span class="p">(</span><span class="n">target_ds</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">layer</span><span class="p">,</span> <span class="n">burn_values</span><span class="o">=</span><span class="p">[</span><span class="n">target_value</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">target_ds</span>
 
     <span class="c1"># Define a functionto convert vector to Raster</span>
 <span class="k">def</span> <span class="nf">vectors_to_raster</span><span class="p">(</span><span class="n">file_paths</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">geo_transform</span><span class="p">,</span> <span class="n">projection</span><span class="p">):</span>
-    
+
     <span class="c1"># Create empty cell and load pixel values</span>
     <span class="n">labeled_pixels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">file_paths</span><span class="p">):</span>
@@ -21057,8 +21059,8 @@ MO4KCgoKCgoKCgoKCgreBhTGXUFBQUFBQUFBQUFBwduA/x8RW/D14b9vNgAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;The three classes are: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">classes</span> 
-<span class="k">print</span> <span class="s2">&quot;Total number of training labels: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">training_labels</span>.size 
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;The three classes are: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">classes</span>
+<span class="k">print</span> <span class="s2">&quot;Total number of training labels: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">training_labels</span>.size
 <span class="k">print</span> <span class="s2">&quot;Total number of training sample size: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">training_samples</span>.size
 </pre></div>
 
@@ -33571,7 +33573,7 @@ Classification accuracy: 0.933333
   </div>
 </body>
 
- 
+
 
 
 </html>
