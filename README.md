@@ -9,4 +9,3 @@
  5. Post Image Classification Change Detection
  6. Surface Extraction with Decision Trees
 
- Link:<a href =https://adbedada.github.io/tutorials> adbedada.github.io/tutorials</a>
