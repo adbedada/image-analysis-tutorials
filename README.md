@@ -2,7 +2,7 @@
  Six Chapters covering Geospatial Analysis in Python environment
  
  The topics covered are:
- 1. Reading and Visualizing Raster files
+ 1. Exploratory Data Analysis for Satellite images
  2. Image Enhancement and Component Analysis
  3. Spectral indices and image transformation
  4. Unsupervised and Supervised image classification
