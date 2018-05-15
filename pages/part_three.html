@@ -11793,7 +11793,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A Spectral Index is an indicator of a spectral property obtained by combining the reflectance values of two or more bands. We take a look at four of the most common indices and examine the greeness, moisture content and impervious surface that can be detected from a satellite image.</p>
+<p>A Spectral Index is an indicator of a spectral characterstics that can be obtained by combining the reflectance values of two or more bands. On this section, we will take a look at four indices and examine different attributes of a land cover. Later, we will also see how to transform pixel values and detect patterns from a satellite image.</p>
 
 </div>
 </div>
@@ -11802,7 +11802,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The topics covered on this part are:</p>
+<p>The topics covered on this chapter are:</p>
 
 <pre><code>1. Spectral Idices
     - NDVI, NDBI, NDMI, SAVI
@@ -38079,8 +38079,8 @@ AJMkMRgMBoPBYDAYDAaDwWAA4P8BNwDdAGXeTUoAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The Tasseled-Cap Transformation (TCT) is process of converting the original bands of an image into a new set of bands using weighted sums measures. In other words, the surface reflectance of a satellite image will be converted to new components that can help us better understand the brightness, greeness and wetness of a land. &lt;/br&gt;</p>
-<p>The following script is the work of &lt;a href = "<a href="http://karthur.org/2015/tasseled-cap-and-band-ratios-for-urban-studies.html"&gt;">http://karthur.org/2015/tasseled-cap-and-band-ratios-for-urban-studies.html"&gt;</a> K.Arthur Endsely&lt;/a&gt; and all it does is multiplying a six bands image with TCT cofficients.</p>
+<p>The Tasseled-Cap Transformation (TCT) is process of converting the original bands of an image into a new set of bands using weighted sums measures. In other words, the surface reflectance of a satellite image will be converted to new components that can help us better understand the brightness, greeness and wetness of a land.</p>
+<p> The function bellow is created by <a href="http://karthur.org/2015/tasseled-cap-and-band-ratios-for-urban-studies.html"> K.Arthur Endsely</a> and we will use later for transforming pixels of each bands with TCT cofficients.</p>
 
 </div>
 </div>
@@ -38134,7 +38134,7 @@ AJMkMRgMBoPBYDAYDAaDwWAA4P8BNwDdAGXeTUoAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We will go ahead and pass the function to the image in array form. Then we'll subset the transformed bands(components)</p>
+<p> Let's go ahead and pass the function to the image in array form and to visualize the transformed bands, we will subset each components</p>
 
 </div>
 </div>
@@ -38159,7 +38159,7 @@ AJMkMRgMBoPBYDAYDAaDwWAA4P8BNwDdAGXeTUoAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The TCT feature space below will help us explore the relationship between the Brightness and Greeness of the area.</p>
+<p> The TCT feature space below shows us the relationship between Brightness and Greeness.</p>
 
 </div>
 </div>
@@ -39316,7 +39316,7 @@ zMzMzKqMEzgzMzOzKuMEzszMzKzKOIEzMzMzqzL/D++63QN3UP8xAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's plot the three transformed components.</p>
+<p>Let's also plot the three transformed components.</p>
 
 </div>
 </div>
