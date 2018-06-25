@@ -1,96 +1,75 @@
 <!DOCTYPE html>
 <html>
-
-<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,
-initial-scale=1.0"> <title> Tutorials</title>
-
+<head>
+    <meta charset='utf-8' />
+    <title>Extrude polygons for 3D indoor mapping.</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
 </head>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/external/particles.js"></script>
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<body>
 
-<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
-<link rel="stylesheet" href="css/main.css"></link>
-<!-- <link rel="stylesheet" href="css/particles.css"></link> -->
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"></link> -->
+<div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGVzdGFuZW9uMSIsImEiOiJjaW94andic2wwMXN0dWNtOGJnNndvajFlIn0._eDLrcUaWTpNHqrb5bQE-Q';
+var map = new mapboxgl.Map({
+  container: 'map',
+   style: 'mapbox://styles/mapbox/streets-v9',
+   center: [-68.13734351262877, 45.137451890638886],
+   zoom: 5
+    // container: 'map',
+    // style: 'mapbox://styles/mapbox/streets-v9',
+    // center: [-1.522075,12.354846],
+    // zoom: 8.99,
+    // pitch: 40,
+    // bearing: 20
+});
+map.on('load', function (){
+map.addLayer({
+    'id': 'main',
+    'type': 'fill',
+      'source': {
+        'type': 'geojson',
+        'data': 'https://raw.githubusercontent.com/adbedada/tutorials/master/mpb.geojson'
+    },
+    'layout': {},
+    'paint': {
+              'fill-color':"#ade",
+    }
+});
+});
 
-<script src="js/external/particles.js"></script>
-<!-- <link rel="stylesheet" type="text/css" href="css/main.css"/> -->
 
 
 
-<style>
-</style>
+
+
+
+
+
+    //     'paint': {
+    //         // See the Mapbox Style Specification for details on data expressions.
+    //         // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions
+    //
+    //         // Get the fill-extrusion-color from the source 'color' property.
+    //         'fill-extrusion-color': '#aaa',
+    //
+    //         // Get fill-extrusion-height from the source 'height' property.
+    //         'fill-extrusion-height': ['get', 'height'],
+    //
+    //         // Get fill-extrusion-base from the source 'base_height' property.
+    //         'fill-extrusion-base': ['get', 'base_height'],
+    //
+    //         // Make extrusions slightly opaque for see through indoor walls.
+    //         'fill-extrusion-opacity': 0.5
+    //     }
+    // });
 
 </script>
 
-<body>
-	<!-- <div class="container">
-			<div id="particles-js"></div>
-		</div> -->
-	<div class="title_container">
-		<div class="main_title">Geospatial Analysis in Python </div>
-	</div>
-
-
-<!-- <script> particlesJS.load('particles-js', 'assets/particles.json', function() {
-  console.log('callback - particles.js config loaded');
-});
-	</script> -->
-
-
-	</script>
-	<div class="all_blocks_cont">
-		<a href ="pages/part_one.html">
-				<div class="block_container">
-					<img class="bck_img" src ="assets/part_one.svg"/>
-					<div class="block_title_cont">
-						<span class="chapters">Part I: </span> Exploratory Data Analysis For Satellite Images</div>
-				</div>
-		</a>
-		<a href ="pages/part_two.html">
-				<div class="block_container">
-					<img class="bck_img" src ="assets/part_two.svg"/>
-					<div class="block_title_cont">
-						<span class="chapters">Part II: </span> Image Enhancement and Component Analysis</div>
-			</div>
-		</a>
-		<a href = "pages/part_three.html">
-				<div class="block_container">
-					<img class="bck_img" src ="assets/part_three.svg"/>
-						<div class="block_title_cont">
-							<span class="chapters">Part III: </span> Spectral Indices and Transformation </div>
-				</div>
-		</a>
-	<a href = "pages/part_four.html">
-		<div class="block_container">
-			<img class="bck_img" src ="assets/part_four.svg"/>
-			<div class="block_title_cont">
-				<span class="chapters">Part IV: </span> Supervised and Unsupervised Classification </div>
-		</div>
-	</a>
-	<a href = "pages/part_five.html">
-		<div class="block_container">
-			<img class="bck_img" src ="assets/part_five.svg"/>
-			<div class="block_title_cont">
-				<span class="chapters">Part V: </span> Post Image Classification Change Detection </div>
-		</div>
-	</a>
-
-	<a href = "pages/part_six.html">
-		<div class="block_container">
-			<img class="bck_img" src ="assets/part_six.svg"/>
-			<div class="block_title_cont">
-				<span class="chapters">Part VI: </span> Surface Extraction with Decision Trees </div>
-		</div>
-	</a>
-
-	</div>
-
-
 </body>
-
 </html>
