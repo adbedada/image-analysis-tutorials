@@ -1,7 +1,7 @@
 # Tutorials
- Six Chapters covering Geospatial Analysis in Python environment
+ Six tutorials covering Geospatial Data (Raster) Analysis in Python environment
  
- The topics covered are:
+ The topics are:
  1. Exploratory Data Analysis for Satellite images
  2. Image Enhancement and Component Analysis
  3. Spectral indices and image transformation
