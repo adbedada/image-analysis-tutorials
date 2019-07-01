@@ -1,5 +1,5 @@
-# Tutorials
- Six tutorials covering Geospatial Data (Raster) Analysis in Python environment
+# [Tutorials](https://adbeda.github.io/tutorials/)
+ Six notebooks on introduction to machine-learning for satellite images
  
  The topics are:
  1. Exploratory Data Analysis for Satellite images
