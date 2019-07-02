@@ -1,4 +1,4 @@
-# [Tutorials](https://adbeda.github.io/tutorials/)
+# [Tutorials](https://adbeda.github.io/image-analysis-tutorials/)
  Six notebooks on introduction to machine-learning for satellite images
  
  The topics are:
