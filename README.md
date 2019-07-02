@@ -1,5 +1,5 @@
 # [Tutorials](https://adbeda.github.io/image-analysis-tutorials/)
- Six notebooks on introduction to machine-learning for satellite images
+ Six notebooks on introductory satellite image analysis and applications of machine learning 
  
  The topics are:
  1. Exploratory Data Analysis for Satellite images
